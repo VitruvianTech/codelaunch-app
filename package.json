@@ -1,0 +1,8 @@
+{
+  "name": "@codelaunch/app",
+  "version": "0.1.0",
+  "scripts": {
+    "postinstall": "codelaunch install ${npm_package_name} ${npm_package_version}"
+  },
+  "dependencies": {}
+}
