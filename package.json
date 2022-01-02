@@ -2,7 +2,7 @@
   "name": "Enter app scope and name (i.e., @my/app), and optionally change version below.",
   "version": "0.1.0-pre.1",
   "scripts": {
-    "postinstall": "codelaunch install ${npm_package_name} ${npm_package_version}"
+    "postinstall": "codelaunch install ${npm_package_name} ${npm_package_version} ${npm_package_main}"
   },
   "dependencies": {}
 }
