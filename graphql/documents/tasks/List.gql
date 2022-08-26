@@ -1,0 +1,9 @@
+query ListTasks {
+  allTasksList(filter: { deleted: { equalTo: false } }, orderBy: NAME_ASC) {
+    id
+    name
+    seq
+    deleted
+    updated
+  }
+}

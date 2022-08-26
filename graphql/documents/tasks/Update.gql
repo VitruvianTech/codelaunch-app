@@ -1,0 +1,11 @@
+mutation UpdateTask($id: String!, $data: TaskPatch!) {
+  updateTaskById(input: { taskPatch: $data, id: $id }) {
+    task {
+      id
+      name
+      seq
+      deleted
+      updated
+    }
+  }
+}

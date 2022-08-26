@@ -1,0 +1,9 @@
+query DetailTask($id: String!) {
+  taskById(id: $id) {
+    id
+    name
+    seq
+    deleted
+    updated
+  }
+}
