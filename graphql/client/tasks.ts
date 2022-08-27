@@ -1,5 +1,7 @@
 // @ts-ignore
-import { datetime, asc } from '@codelaunch/app/lib/utils'
+import { asc } from 'codelaunch/lib/utils'
+// @ts-ignore
+import { datetime } from '@codelaunch/app/lib/utils'
 
 import {
   ListTasksDocument,

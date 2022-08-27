@@ -129,7 +129,7 @@
 
 <script setup>
 import { ref, toRefs, inject, watch, computed } from 'vue'
-import { useSync, useSyncing, useFocus, useClear } from '@codelaunch/app/composables/forms'
+import { useSync, useSyncing, useFocus, useClear } from 'codelaunch/composables/forms'
 import { uuid, truncate } from '@codelaunch/app/lib/id'
 import { datetime } from '@codelaunch/app/lib/utils'
 

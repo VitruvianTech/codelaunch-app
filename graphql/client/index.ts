@@ -1,5 +1,5 @@
 // @ts-ignore
-import { merge } from '@codelaunch/app/lib/utils'
+import { merge } from 'codelaunch/lib/utils'
 import tasks from './tasks'
 
 
