@@ -1,8 +1,0 @@
-mutation CreateUser($user: UserInput!) {
-  createUser(input: { user: $user }) {
-    user {
-      id
-      sub
-    }
-  }
-}

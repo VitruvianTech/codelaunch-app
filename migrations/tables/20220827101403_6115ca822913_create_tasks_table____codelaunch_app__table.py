@@ -1,8 +1,8 @@
 
 "Create Tasks table -> @codelaunch/app (table)"
-# Revision IO: cad4acb591d7
-# Previous ID: 0cc4243ab21a
-# Created: 2022-06-03 19:30:44.455982
+# Revision IO: 6115ca822913
+# Previous ID: 2979276ace33
+# Created: 2022-08-27 10:14:03.267366
 
 import sqlalchemy as sa
 from alembic import op, context
@@ -77,7 +77,8 @@ def unseed():
 # Value can be 'source' or 'target'
 #
 # Database (engine) 'target' only runs in local development environments,
-# and does not ever need mock seed data.
+# used to compare schema diff changes with 'source', and does not ever
+# need mock seed data.
 #
 # Database (engine) 'source' always runs in any environment.
 def upgrade(engine_name):
@@ -99,7 +100,7 @@ def downgrade(engine_name):
 
 
 # Used by Alembic
-revision = 'cad4acb591d7'
-down_revision = '0cc4243ab21a'
+revision = '6115ca822913'
+down_revision = '2979276ace33'
 depends_on = None
 branch_labels = None

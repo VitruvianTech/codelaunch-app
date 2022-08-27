@@ -1,0 +1,8 @@
+mutation CreateCodeLaunchUser($user: CodeLaunchUserInput!) {
+  createCodeLaunchUser(input: { codeLaunchUser: $user }) {
+    codeLaunchUser {
+      id
+      sub
+    }
+  }
+}

@@ -1,8 +1,8 @@
 
 "Create Users table -> @codelaunch/app (table)"
-# Revision IO: 0cc4243ab21a
+# Revision IO: 2979276ace33
 # Previous ID: 
-# Created: 2022-01-16 22:48:30.636595
+# Created: 2022-08-27 10:13:54.326573
 
 import sqlalchemy as sa
 from alembic import op, context
@@ -23,7 +23,9 @@ def up():
     );
 
     ALTER TABLE IF EXISTS codelaunch_app.users
-      ENABLE ROW LEVEL SECURITY;
+      ENABLE ROW LEVEL SECURITY; 
+
+    COMMENT ON TABLE "codelaunch_app"."users" IS E'@name CodeLaunchUsers';
 
     GRANT ALL ON TABLE codelaunch_app.users TO member;
 
@@ -69,7 +71,8 @@ def unseed():
 # Value can be 'source' or 'target'
 #
 # Database (engine) 'target' only runs in local development environments,
-# and does not ever need mock seed data.
+# used to compare schema diff changes with 'source', and does not ever
+# need mock seed data.
 #
 # Database (engine) 'source' always runs in any environment.
 def upgrade(engine_name):
@@ -91,7 +94,7 @@ def downgrade(engine_name):
 
 
 # Used by Alembic
-revision = '0cc4243ab21a'
+revision = '2979276ace33'
 down_revision = None
 depends_on = 'bf05c9f6f75c'
 branch_labels = ('codelaunch_app',)

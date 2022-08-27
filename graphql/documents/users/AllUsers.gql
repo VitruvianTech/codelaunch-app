@@ -1,6 +1,0 @@
-query AllUsers {
-  allUsersList(orderBy: ID_DESC, first: 10, offset: 0) {
-    id
-    sub
-  }
-}
