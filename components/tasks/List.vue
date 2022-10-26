@@ -120,6 +120,9 @@
       <div v-if="deleting || fetching || stale" class="tip text-yellow-700 bg-yellow-100"><i class="text-xs pi pi-sync pi-spin" /> Syncing...</div>
       <div v-if="error" class="tip text-red-600 bg-red-100">{{error}}</div>
     </div>
+    <div v-if="subscription" class="mt-4">
+      <div v-if="subscription.error.value" class="tip text-red-600 bg-red-100">{{subscription.error.value}}</div>
+    </div>
   </client-only>
 </template>
 
@@ -133,7 +136,8 @@ import Detail from '@codelaunch/app/components/tasks/Detail'
 
 import {
   useListTasksQuery,
-  useDeleteTaskMutation
+  useDeleteTaskMutation,
+  useSubscribeTasksSubscription
 } from 'gql'
 
 import {
@@ -163,6 +167,7 @@ const {
 
 const { fetching: deleting, error: deleteError, executeMutation: deleteTaskMutation } = useDeleteTaskMutation()
 const { fetching, stale, data, error, executeQuery: listTaskQuery } = useListTasksQuery()
+const subscription = useSubscribeTasksSubscription()
 const router = useRouter()
 const snackbar = inject('snackbar', () => {})
 const detailDialogs = ref({})

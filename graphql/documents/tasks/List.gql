@@ -7,3 +7,13 @@ query ListTasks {
     updated
   }
 }
+
+subscription SubscribeTasks {
+  taskUpdated {
+    event
+    task {
+      id
+      name
+    }
+  }
+}
