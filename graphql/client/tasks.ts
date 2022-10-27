@@ -30,6 +30,14 @@ export default {
 
   updates: {
 
+    Subscription: {
+
+      taskUpdated: (result, args, cache, info) => {
+        console.log(result, args, cache, info)
+      }
+
+    },
+
     Mutation: {
 
       createTask: (result, args, cache, info) => {

@@ -97,23 +97,8 @@ export default {
     logout() {
       const $auth0 = this.$auth0
 
-      indexedDB.databases().then(dbs => {
-          var promises = dbs.map(db => {
-              return new Promise((resolve, reject) => {
-                  var req = indexedDB.deleteDatabase(db.Name)
-                  req.onsuccess = resolve
-                  req.onerror = reject
-                  req.onblocked = reject
-              })
-          })
-
-          Promise.all(promises)
-            .catch(console.error)
-            .then(() => {
-              $auth0.logout({
-                returnTo: window.location.origin
-              })
-            })
+      $auth0.logout({
+        returnTo: window.location.origin
       })
     },
     refresh() {
