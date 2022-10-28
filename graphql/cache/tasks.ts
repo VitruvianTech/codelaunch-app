@@ -33,7 +33,24 @@ export default {
     Subscription: {
 
       taskUpdated: (result, args, cache, info) => {
-        console.log(result, args, cache, info)
+        if(result.taskUpdated.task) {
+          const taskById = (cache.readQuery({ query: DetailTaskDocument, variables: result.taskUpdated.task.id }) || {}).taskById
+
+          if(taskById) {
+            cache.updateQuery({
+              query: DetailTaskDocument,
+              variables: { id: result.taskUpdated.task.id }
+            }, data => ({
+              ...data,
+              taskById
+            }))
+
+            cache.updateQuery({ query: ListTasksDocument }, data => data ? {
+              ...data,
+              allTasksList: data.allTasksList.sort(asc('name'))
+            } : data)
+          }
+        }
       }
 
     },
